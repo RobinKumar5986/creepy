@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-
+#Now the example is error free
+#install module creepy before running
 from creepy import Crawler
 from threading import Lock
 
@@ -10,7 +11,7 @@ class TestCrawler(Crawler):
 
     def process_document(self, doc):
         self.process_lock.acquire()
-        print 'GET', doc.status, doc.url
+        print('GET', doc.status, doc.url)
         self.process_lock.release()
 
 c = TestCrawler()
